@@ -2402,14 +2402,14 @@ void SetFlow() { SetPIntOnClick(MIN_PRINT_FLOW, MAX_PRINT_FLOW, []{ planner.refr
         return;
       }
       bed_mesh_t zval = {0};
-      zval[0][0] = TramFL();
+      zval[0][0] = Tram(0);
       checkkey = NothingToDo;
       MeshViewer.DrawMesh(zval, 2, 2);
-      zval[1][0] = TramFR();
+      zval[1][0] = Tram(1);
       MeshViewer.DrawMesh(zval, 2, 2);
-      zval[1][1] = TramBR();
+      zval[1][1] = Tram(2);
       MeshViewer.DrawMesh(zval, 2, 2);
-      zval[0][1] = TramBL();
+      zval[0][1] = Tram(3);
       MeshViewer.DrawMesh(zval, 2, 2);
 
       DWINUI::Draw_CenteredString(140, F("Calculating average"));
